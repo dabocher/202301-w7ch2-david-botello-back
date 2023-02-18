@@ -7,8 +7,5 @@ export class CustomError extends Error {
     public publicMessage: string
   ) {
     super(message);
-
-    this.statusCode = statusCode;
-    this.publicMessage = publicMessage;
   }
 }
