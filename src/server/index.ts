@@ -4,10 +4,17 @@ import robotsRouter from "./routers/robotsRouters.js";
 import cors from "cors";
 
 export const app = express();
+const corsOptions = {
+  origin: "http://localhost:4000",
+  methods: "GET,PUT,POST,DELETE",
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+};
+
 app.disable("x-powered-by");
 
 app.use(morgan("dev"));
-app.use(cors());
 app.use(express.json());
+app.use(cors(corsOptions));
 
 app.use("/robots", robotsRouter);
