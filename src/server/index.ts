@@ -5,7 +5,10 @@ import cors from "cors";
 
 export const app = express();
 const corsOptions = {
-  origin: "http://localhost:4000",
+  origin: [
+    "http://localhost/",
+    "https://202301-w6chwe-sergio-fontal-david-bot.netlify.app/",
+  ],
   methods: "GET,PUT,POST,DELETE",
   preflightContinue: false,
   optionsSuccessStatus: 204,
